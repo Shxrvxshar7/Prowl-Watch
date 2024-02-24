@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge"> 
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0"> 
+	<title>Dashboard</title> 
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+</head> 
+
+<body> 
+	
+	<!-- for header part -->
+	<header> 
+
+		<div class="logosec"> 
+			<div class="logo">
+				<img src="{{ url_for('static', filename='logo.png') }}" alt="ProwlWatch-logo" width=48px" height="48px">
+				ProwlWatch Panel
+			</div> 
+			<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                class="icn menuicn" 
+                id="menuicn" 
+                alt="menu-icon"> 
+
+		</div> 
+
+	</header> 
+
+	<div class="main-container"> 
+		<div class="navcontainer"> 
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<a href="/index" class="logout-link">
+						<div class="nav-option option1">
+			
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+								class="nav-img" alt="dashboard">
+							<h3> Dashboard</h3>
+					
+				</div>
+			</a>
+					<a href="/reports" class="logout-link">
+						<div class="nav-option logout-link">
+					
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+								class="nav-img" alt="Incidents">
+							<h3> All Incidents</h3>
+					
+					</div> 
+				</a>
+					<a href="/logout" class="logout-link">
+						<div class="nav-option logout">
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+							<h3>Logout</h3>
+						</div>
+					</a>
+
+				
+			</nav> 
+		</div> 
+		<div class="main"> 
+			<div class="box-container"> 
+
+				<div class="box box1"> 
+					<div class="text"> 
+						<h2 id="incidentCount">{{ total_incident }}</h2> 
+						<h2 class="incident">Total Incidents</h2> 
+					</div> 
+
+					<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+						alt="Views"> 
+				</div> 
+
+				<div class="box box2"> 
+					<div class="text"> 
+						<h3 id="last-incident">{{ last_incident }}</h3> 
+						<h3 class="lastIncident">Last Incident At</h3> 
+					</div> 
+
+					<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png"
+						alt="likes"> 
+				</div> 
+
+				<div class="box box3"> 
+					<div class="text"> 
+						<h2 id="cam-val">{{ cam_info }}</h2> 
+						<h2 class="cam">Active Cameras</h2> 
+					</div> 
+
+					<img src= 	
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+						alt="comments"> 
+				</div> 
+
+				<div class="box box4 last-location-view"> 
+					<div class="text">  
+						<h2 style="font-size: 1.5em;">View Last Location</h2> 
+					</div> 
+
+					<img src= 
+"https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published"> 
+				</div> 
+			</div> 
+			
+			<div class="report-container"> 
+				<a href="/reports" class="logout-link">
+					<div class="report-header">
+						<h1 class="recent-Articles">Recent Incidents</h1>
+						<button class="view">View All</button>
+					</div>
+				</a>
+
+				<div class="report-body"> 
+					<div class="report-topic-heading"> 
+						<h3 class="t-op">Camera</h3> 
+						<h3 class="t-op">Time</h3> 
+						<h3 class="t-op">Date</h3> 
+						<h3 class="t-op">Location</h3> 
+					</div> 
+
+					<div class="items" id="item-list">
+							{% for item in data %}
+								<div class="item1">
+									<h3 class="t-op-nextlvl">{{ item['Camera'] }}</h3>
+									<h3 class="t-op-nextlvl">{{ item['Time'] }}</h3>
+									<h3 class="t-op-nextlvl">{{ item['Date'] }}</h3>
+									<h3 class="t-op-nextlvl label-tag">{{ item['location'] }}</h3>
+								</div>
+							{% endfor %}
+					</div>
+				</div> 
+			</div> 
+		</div> 
+	</div> 
+	<script src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body> 
+</html>

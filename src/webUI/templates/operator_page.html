@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Page</title>
+    <!-- Firebase JavaScript SDK -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='operator_page.css') }}">
+</head>
+<body>
+    <div class="form">
+      <form id="cameraInfoForm" method="post" action="/add_camera_info">
+        <div class="title">Hello</div>
+        <div class="subtitle">Please upload camera details</div>
+        <div class="input-container ic1">
+          <input id="cameraNumber" name="cameraNumber" class="input" type="number" placeholder=" " />
+          <div class="cut"></div>
+          <label for="cameraNumber" class="placeholder">Camera Number</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="latitude" class="input" name="latitude" type="number" max=e min=e step=any placeholder=" " />
+          <div class="cut"></div>
+          <label for="latitude" class="placeholder">Latitude</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="longitude" class="input" name="longitude" type="number" max=e min=e step=any placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="longitude" class="placeholder">Longitude</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="piModule" class="input" name="piModule" type="number" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="piModule" class="placeholder">pi Module number</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="esp32Module" class="input" name="esp32Module" type="number" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="esp32Module" class="placeholder">esp32 Module Number</label>
+        </div>
+        <!-- <button type="text" class="submit">submit</button> -->
+        <button type="submit" class="submit">Submit</button>
+      </form>
+    </div>
+</body>
+</html>

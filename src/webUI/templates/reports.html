@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Reports</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='responsive.css') }}">
+</head>
+<body>
+
+    <header>
+    
+        <div class="logosec">
+            <div class="logo">Admin Panel</div>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+                class="icn menuicn" id="menuicn" alt="menu-icon">
+    
+        </div>
+    
+    </header>
+    <div class="main-container">
+        <div class="navcontainer"> 
+            <nav class="nav">
+				<div class="nav-upper-options">
+					<a href="/index" class="logout-link">
+						<div class="nav-option">
+			
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+								class="nav-img" alt="dashboard">
+							<h3> Dashboard</h3>
+					
+				</div>
+			</a>
+					<a href="/reports" class="logout-link">
+						<div class="nav-option logout-link option1">
+					
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
+								class="nav-img" alt="Incidents">
+							<h3> All Incidents</h3>
+					
+					</div> 
+				</a>
+					<a href="/logout" class="logout-link">
+						<div class="nav-option logout">
+							<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img" alt="logout">
+							<h3>Logout</h3>
+						</div>
+					</a>
+
+				
+			</nav> 
+		</div> 
+        <div class="report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">All Incidents</h1>
+            </div>
+            <div class="report-body">
+                <div class="report-topic-heading">
+                    <h3 class="t-op">Camera</h3>
+                    <h3 class="t-op">Time</h3>
+                    <h3 class="t-op">Date</h3>
+                    <h3 class="t-op">Location</h3>
+                </div>
+    
+                <div class="items" id="item-list">
+                    {% for item in data %}
+                    <div class="item1">
+                        <h3 class="t-op-nextlvl">{{ item['Camera'] }}</h3>
+                        <h3 class="t-op-nextlvl">{{ item['Time'] }}</h3>
+                        <h3 class="t-op-nextlvl">{{ item['Date'] }}</h3>
+                        <h3 class="t-op-nextlvl label-tag">{{ item['location'] }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>
