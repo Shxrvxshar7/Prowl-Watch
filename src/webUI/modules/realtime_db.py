@@ -6,12 +6,14 @@ import os
 
 load_dotenv()
 
+cred = credentials.Certificate("data-key.json")
+app2 = firebase_admin.initialize_app(cred, {'databaseURL': os.getenv("REALTIME_DB")}, name="app2")
+
 
 def return_data():
 
 
-    cred = credentials.Certificate("data-key.json")
-    app2 = firebase_admin.initialize_app(cred, {'databaseURL': os.getenv("REALTIME_DB")}, name="app2")
+    
 
     ref = db.reference("/", app=app2)
 
