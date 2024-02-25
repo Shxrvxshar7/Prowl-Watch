@@ -62,3 +62,9 @@ body {
     background-color: #3f0097; 
   }
   
+  .error-msg {
+    color: black;
+    background-color: red;
+    text-align: center;
+    width: 100%;
+  }

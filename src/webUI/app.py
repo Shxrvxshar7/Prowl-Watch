@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash, get_flashed_messages
 import firebase_admin
 from firebase_admin import credentials, firestore
 from dotenv import load_dotenv
@@ -73,7 +73,8 @@ def index():
 @app.route('/operator_page')
 def operator_page():
     if 'username' in session and session['user_type'] == 'operator':
-        return render_template('operator_page.html')
+        message = get_flashed_messages()
+        return render_template('operator_page.html', message=message)
     else:
         return redirect(url_for('login'))
 
@@ -94,13 +95,17 @@ def add_camera_info():
 
     cam_info = db.collection('camera_info')
 
-    new_camera_doc = cam_info.add({
+    new_camera_doc , doc_id = cam_info.add({
             'cameraNumber': cameraNumber,
             'latitude': latitude,
             'longitude': longitude,
             'piModule': piModule,
             'esp32Module': esp32Module
         })
+    if doc_id:
+        flash("Successfully added Data")
+    else:
+        flash("Error Adding Data")
     return redirect(url_for("operator_page"))
 
 

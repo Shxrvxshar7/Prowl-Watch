@@ -12,6 +12,9 @@
 </head>
 <body>
     <div class="form">
+      {% if message %}
+          <div class="message" name="message">{{ message[0] }}</div>
+      {% endif %}
       <form id="cameraInfoForm" method="post" action="/add_camera_info">
         <div class="title">Hello</div>
         <div class="subtitle">Please upload camera details</div>
