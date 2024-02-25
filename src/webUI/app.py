@@ -11,8 +11,7 @@ import os
 load_dotenv()
 # Initialize Flask app
 app = Flask(__name__)
-api_key = os.getenv('API_KEY')
-app.secret_key = api_key
+app.secret_key = os.urandom(24)
 
 # Initialize Firestore DB
 cred = credentials.Certificate("data-key.json")
