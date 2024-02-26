@@ -51,12 +51,12 @@ and having Python 3
    $ pip install pyserial
    ```
 3. **Camera Configuration**
-   ```
+```
   $ sudo raspi-config
   # go to interface options and enable camera interface
   # reboot system to take effect
   $ sudo reboot
-   ```
+```
 4. 
 
 
