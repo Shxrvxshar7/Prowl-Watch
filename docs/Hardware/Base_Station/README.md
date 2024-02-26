@@ -29,6 +29,11 @@ Wire the **I2c LCD Display** to ESP 32 according to this table:
 Wire the _+ve_ of **Buzzer** to _GPIO 13_ and _GND_ to _GND_ of ESP 32
 
 ## Code Upload
+Install the required Libraries : 
+- LiquidCrystal_I2C
+- LoRa
+- Firebase_ESP_Client (Ver: 2.3.7)
+
 Open [this](/src/Arduino_Code/ESP_32_LoRa_FB/ESP_32_LoRa_FB.ino) code in Arduino IDE
 
 Change the **SSID** and **PWD** to your WIFI SSID and PWD 
