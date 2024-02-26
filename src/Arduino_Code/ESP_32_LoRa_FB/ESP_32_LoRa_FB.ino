@@ -22,14 +22,14 @@
 /*-------- FIREBASE SECTION ------------*/
 
 // Insert your network credentials
-#define WIFI_SSID "Onichan"
-#define WIFI_PASSWORD "callme@9"
+#define WIFI_SSID "XXXXX"
+#define WIFI_PASSWORD "YYYYYY"
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyBbC7827l2Y6n5GpKtZP5j2i3W6kTno6AI"
+#define API_KEY "your Auth Key"
 
 // Insert RTDB URLefine the RTDB URL */
-#define DATABASE_URL "https://forest-v1-c853f-default-rtdb.asia-southeast1.firebasedatabase.app/" 
+#define DATABASE_URL "Your Database URL" 
 
 //Define Firebase Data object
 FirebaseData fbdo;
