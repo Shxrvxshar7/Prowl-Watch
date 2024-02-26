@@ -11,5 +11,5 @@
 # How To Run
 
 To run the WebUI, [check this](docs/webUI/README.md)    
-To Configure Base Station,[check this](docs/Hardware_Configs/README.md)   
-To Configure Raspberry pi,[check this](docs/Hardware_Config/Pi/README.md)
+To Configure Base Station,[check this](docs/Hardware/Base_Station/README.md)   
+To Configure Raspberry pi,[check this](docs/Hardware/Pi/README.md)
