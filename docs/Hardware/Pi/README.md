@@ -44,7 +44,7 @@ Select **COM PORT**,**BOARD** (here UNO) and Upload
 Make sure you are using 'Raspian - bullseye' (latest version) without GUI
 and having Python 3
 
-1. Install **Tf Lite** by referring this [repo](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi)
+1. Install **Tensorflow Lite** by referring to this [repo](https://github.com/EdjeElectronics/TensorFlow-Lite-Object-Detection-on-Android-and-Raspberry-Pi/blob/master/deploy_guides/Raspberry_Pi_Guide.md)
 
 2. Install **Py Serial**
    ```
@@ -52,10 +52,10 @@ and having Python 3
    ```
 3. **Camera Configuration**
    ```
-    $ sudo raspi-config
-   # go to interface options and enable camera interface
-   # reboot system to take effect
-    $  sudo reboot
+  $ sudo raspi-config
+  # go to interface options and enable camera interface
+  # reboot system to take effect
+  $ sudo reboot
    ```
 4. 
 
